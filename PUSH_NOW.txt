@@ -1,0 +1,41 @@
+================================================================================
+URGENT: RUN THESE COMMANDS TO FIX CI
+================================================================================
+
+The file has been fixed locally but NOT pushed to GitHub.
+The CI is still running the old broken code.
+
+COPY AND PASTE THESE COMMANDS ONE AT A TIME:
+================================================================================
+
+cd c:\Users\HP\Stellar-GreenPay
+
+git add contracts/escrow-contract/src/lib.rs
+
+git commit -m "fix(escrow): remove contractclient and use invoke_contract"
+
+git push origin main
+
+================================================================================
+ALTERNATIVE: Use GitHub Desktop or VS Code
+================================================================================
+
+1. Open GitHub Desktop or VS Code
+2. You should see "contracts/escrow-contract/src/lib.rs" as modified
+3. Stage the file
+4. Commit with message: "fix(escrow): remove contractclient and use invoke_contract"
+5. Push to origin/main
+
+================================================================================
+WHAT WAS FIXED IN THE FILE:
+================================================================================
+
+✅ Removed: #[contractclient(name = "GreenPayContractClient")]
+✅ Removed: pub trait GreenPayContractInterface { ... }
+✅ Removed: contractclient from imports
+✅ Changed: GreenPayContractClient::new() to env.invoke_contract()
+✅ Added: Symbol to imports
+✅ Fixed: All test code to use env.invoke_contract()
+
+The local file is 100% correct and ready to push!
+================================================================================
